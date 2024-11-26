@@ -1,0 +1,15 @@
+COMMIT_MESSAGE_FILE=$1
+COMMIT_MESSAGE=$(cat "$COMMIT_MESSAGE_FILE")
+
+echo "---------------------------"
+echo "$COMMIT_MESSAGE"
+echo "---------------------------"
+
+if pnpm exec commitlint --edit "$COMMIT_MESSAGE_FILE"; then
+  echo "✅ commit success ✅"
+  exit 0 
+else
+  echo "❌ commit fail ❌"
+  exit 1
+fi
+

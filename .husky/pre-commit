@@ -1,0 +1,8 @@
+echo "🔍 Apply lint rules before commit.."
+if pnpm exec lint-staged; then
+  echo "✅ lint rules success"
+
+else
+  echo "❌ lint rules fail ❌"
+  exit 1
+fi
