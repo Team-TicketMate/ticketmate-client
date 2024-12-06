@@ -5,7 +5,10 @@
     "eslint:recommended",
     "plugin:import/recommended"
   ],
-  "plugins": ["import", "unused-imports"],
+  "plugins": ["import", "unused-imports", "jest"],
+  "env": {
+    "jest/globals": true
+  },
   "rules": {
     "no-unused-vars": "warn",
     "@typescript-eslint/no-unused-vars": "warn",
@@ -40,6 +43,13 @@
           "caseInsensitive": true
         }
       }
-    ]
+    ],
+
+    // jest
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/prefer-to-have-length": "warn",
+    "jest/valid-expect": "error"
   }
 }
