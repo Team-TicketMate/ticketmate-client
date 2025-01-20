@@ -1,0 +1,35 @@
+@mixin Heading-01 {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+@mixin Heading-02 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+@mixin Heading-03 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+@mixin Heading-04 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+@mixin Paragraph-01 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+@mixin Paragraph-02 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+}
