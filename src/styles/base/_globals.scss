@@ -1,0 +1,38 @@
+:root {
+  --brand-main: #ff6a6a;
+
+  --gray-1: #f9f9f9;
+  --gray-2: #767676;
+  --gray-3: #333333;
+
+  --divider-line: #eee;
+  --image-outline: #ccc;
+
+  --white: #ffffff;
+  --black: #000000;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--gray-3);
+  background: var(--white);
+  font-family: var(--font-noto-sans-kr), Arial, Helvetica, sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
