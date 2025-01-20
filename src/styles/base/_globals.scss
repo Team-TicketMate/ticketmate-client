@@ -2,8 +2,10 @@
   --brand-main: #ff6a6a;
 
   --gray-1: #f9f9f9;
-  --gray-2: #767676;
-  --gray-3: #333333;
+  --gray-2: #eeeeee;
+  --gray-3: #cccccc;
+  --gray-4: #767676;
+  --gray-5: #333333;
 
   --divider-line: #eee;
   --image-outline: #ccc;
@@ -18,7 +20,7 @@ body {
 }
 
 body {
-  color: var(--gray-3);
+  color: var(--gray-5);
   background: var(--white);
   font-family: var(--font-noto-sans-kr), Arial, Helvetica, sans-serif;
 
