@@ -1,13 +1,13 @@
-import React from 'react';
+import { ReactNode } from 'react';
 
 import localFont from 'next/font/local';
 
+import ResponsiveRootLayout from '@/app/_components/responsive-root-layout/responsive-root-layout';
 import ReactQueryProviders from '@/providers/react-query-provider';
 
 import type { Metadata } from 'next';
 
 import '@/styles/base/_index.scss';
-
 
 const notoSansKR = localFont({
   src: '../assets/fonts/NotoSansKR-VariableFont.ttf',
@@ -24,12 +24,14 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="ko">
       <body className={notoSansKR.variable}>
-        <ReactQueryProviders>{children}</ReactQueryProviders>
+        <ReactQueryProviders>
+          <ResponsiveRootLayout>{children}</ResponsiveRootLayout>
+        </ReactQueryProviders>
       </body>
     </html>
   );
