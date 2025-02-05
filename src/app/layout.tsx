@@ -2,9 +2,12 @@ import React from 'react';
 
 import localFont from 'next/font/local';
 
+import ReactQueryProviders from '@/providers/react-query-provider.tsx';
+
 import type { Metadata } from 'next';
 
 import '@/styles/base/_index.scss';
+
 
 const notoSansKR = localFont({
   src: '../assets/fonts/NotoSansKR-VariableFont.ttf',
@@ -25,7 +28,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className={`${notoSansKR.variable}`}>{children}</body>
+      <body className={notoSansKR.variable}>
+        <ReactQueryProviders>{children}</ReactQueryProviders>
+      </body>
     </html>
   );
 }
