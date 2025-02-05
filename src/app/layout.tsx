@@ -2,7 +2,7 @@ import React from 'react';
 
 import localFont from 'next/font/local';
 
-import ReactQueryProviders from '@/providers/react-query-provider.tsx';
+import ReactQueryProviders from '@/providers/react-query-provider';
 
 import type { Metadata } from 'next';
 
