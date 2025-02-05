@@ -5,6 +5,11 @@ echo "---------------------------"
 echo "$COMMIT_MESSAGE"
 echo "---------------------------"
 
+if ! echo "$COMMIT_MESSAGE" | grep -qE " .#?[0-9]+"; then
+  echo "❌ commit fail: 이슈 번호가 포함되어 있지 않거나 공백이 없습니다 ❌"
+  exit 1
+fi
+
 if pnpm exec commitlint --edit "$COMMIT_MESSAGE_FILE"; then
   echo "✅ commit success ✅"
   exit 0 
