@@ -13,7 +13,16 @@
     "no-unused-vars": "warn",
     "@typescript-eslint/no-unused-vars": "warn",
     "unused-imports/no-unused-imports": "error",
-    "import/extensions": ["error", "ignorePackages"],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
     "import/order": [
       "error",
       {
