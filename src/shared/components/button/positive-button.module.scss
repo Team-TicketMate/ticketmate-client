@@ -1,0 +1,40 @@
+@use '@/styles/index' as *;
+
+$button-base-width: 345px; // 기본 버튼 너비 설정
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 44px;
+    border-radius: 12px;
+    border: 1px solid var(--brand-main);
+    padding: 12px 24px;
+    gap: 10px;
+
+    background-color: var(--brand-main);
+    color: var(--white);
+
+    &.large{
+        width: $button-base-width; 
+    }
+
+    &.medium{
+        width: calc(#{$button-base-width} * 2 / 3); 
+        gap: 16px;
+    }
+
+    &.small{
+        width: calc(#{$button-base-width} * 1 / 2); 
+        gap: 16px;
+    }
+
+    span {
+        display: flex;
+        align-items: center;
+
+        @include Paragraph-02;
+        text-align: center;
+    }
+}
