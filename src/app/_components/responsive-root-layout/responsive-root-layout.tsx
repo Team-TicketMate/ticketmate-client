@@ -22,7 +22,7 @@ export default function RootLayout({
 
   return (
     <div className={styles.container}>
-      {children}
+      <div className={styles.content}>{children}</div>
       {isShowBottomNav && <BottomNavigation />}
     </div>
   );
