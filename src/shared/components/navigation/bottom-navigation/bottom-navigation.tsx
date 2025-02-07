@@ -11,16 +11,22 @@ export default function BottomNavigation() {
     <nav className={styles.container}>
       <ul>
         <li className={styles.nav_item}>
-          <HomeIcon fill="var(--gray-4)" width={24} height={24} />
-          <Link href="/">홈</Link>
+          <Link href="/" className={styles.nav_link}>
+            <HomeIcon fill="var(--gray-4)" width={28} height={28} />
+            <span>홈</span>
+          </Link>
         </li>
         <li className={styles.nav_item}>
-          <ChatIcon fill="var(--gray-4)" width={24} height={24} />
-          <Link href="/">채팅</Link>
+          <Link href="/" className={styles.nav_link}>
+            <ChatIcon fill="var(--gray-4)" width={28} height={28} />
+            <span>채팅</span>
+          </Link>
         </li>
         <li className={styles.nav_item}>
-          <MyIcon fill="var(--gray-4)" width={24} height={24} />
-          <Link href="/">마이</Link>
+          <Link href="/" className={styles.nav_link}>
+            <MyIcon fill="var(--gray-4)" width={28} height={28} />
+            <span>마이</span>
+          </Link>
         </li>
       </ul>
     </nav>
