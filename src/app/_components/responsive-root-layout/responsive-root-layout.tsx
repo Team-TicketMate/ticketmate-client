@@ -2,11 +2,14 @@
 
 import React from 'react';
 
+import classNames from 'classnames/bind';
 import { usePathname } from 'next/navigation';
 
 import BottomNavigation from '@/shared/components/navigation/bottom-navigation/bottom-navigation';
 
 import styles from './responsive-root-layout.module.scss';
+
+const cn = classNames.bind(styles);
 
 export default function RootLayout({
   children,
@@ -18,11 +21,20 @@ export default function RootLayout({
   // bottom navigation 숨길 경로
   const hiddenRoutes = ['/auth', '/404'];
 
-  const isShowBottomNav = !hiddenRoutes.includes(pathname);
+  const isShowBottomNav = !hiddenRoutes.some((route) =>
+    pathname.includes(route),
+  );
 
   return (
     <div className={styles.container}>
-      <div className={styles.content}>{children}</div>
+      <div
+        className={cn(
+          styles.content,
+          isShowBottomNav ? styles.with_nav : styles.without_nav,
+        )}
+      >
+        {children}
+      </div>
       {isShowBottomNav && <BottomNavigation />}
     </div>
   );
