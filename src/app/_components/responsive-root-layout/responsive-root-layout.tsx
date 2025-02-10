@@ -5,6 +5,7 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import { usePathname } from 'next/navigation';
 
+import AppBar from '@/shared/components/header/app-bar/app-bar';
 import BottomNavigation from '@/shared/components/navigation/bottom-navigation/bottom-navigation';
 
 import styles from './responsive-root-layout.module.scss';
@@ -27,6 +28,7 @@ export default function RootLayout({
 
   return (
     <div className={styles.container}>
+      <AppBar />
       <div
         className={cn(
           styles.content,

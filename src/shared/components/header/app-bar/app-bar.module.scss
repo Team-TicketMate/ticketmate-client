@@ -1,0 +1,24 @@
+@use '@/styles/index' as *;
+
+.container {
+  background: var(--white);
+  padding: 0 24px 0 0;
+
+  .button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 16px 16px 16px 24px;
+
+    .icon {
+      display: flex;
+      align-items: center;
+    }
+
+    .title {
+      @include Paragraph-01;
+      color: var(--gray-5);
+    }
+  }
+}
