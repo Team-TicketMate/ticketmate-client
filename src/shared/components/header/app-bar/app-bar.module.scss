@@ -1,8 +1,19 @@
 @use '@/styles/index' as *;
 
 .container {
-  background: var(--white);
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  margin: 0 auto;
   padding: 0 24px 0 0;
+
+  width: 100%;
+  max-width: 600px;
+  background: var(--white);
+
+  border-width: 0 1px 0 1px;
+  border-style: solid;
+  border-color: var(--divider-line);
 
   .button {
     display: flex;
