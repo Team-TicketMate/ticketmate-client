@@ -1,12 +1,19 @@
 name: 디자인
-about: 퍼블리싱/CSS 수정
+description: 퍼블리싱/CSS 수정
 title: '[design] '
-labels: ''
-assignees: ''
 body:
   - type: markdown
     attributes:
       value: |
         ## 📌 퍼블리싱 할 내용 or 수정할 내용
 
-        -
+        - 아래 입력 필드에 변경할 내용을 자세히 작성해주세요.
+
+  - type: textarea
+    id: details
+    attributes:
+      label: 변경 사항
+      description: 어떤 디자인을 변경하거나 퍼블리싱할지 자세히 적어주세요.
+      placeholder: 예) 버튼 색상을 파란색에서 초록색으로 변경
+    validations:
+      required: false

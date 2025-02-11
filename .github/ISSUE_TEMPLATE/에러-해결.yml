@@ -1,12 +1,19 @@
 name: 에러 해결
-about: 에러 내용 설명
+description: 에러 내용 설명
 title: '[error] '
-labels: ''
-assignees: ''
 body:
   - type: markdown
     attributes:
       value: |
         ## 📌 에러 내용 설명
 
-        -
+        - 아래 입력 필드에 발생한 에러를 자세히 작성해주세요.
+
+  - type: textarea
+    id: error_description
+    attributes:
+      label: 에러 상세 내용
+      description: 어떤 상황에서 발생한 에러인지 설명해주세요.
+      placeholder: 예) 특정 페이지에서 버튼을 클릭하면 500 에러가 발생합니다.
+    validations:
+      required: false

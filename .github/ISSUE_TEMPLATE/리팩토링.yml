@@ -1,12 +1,19 @@
 name: 리팩토링
-about: 폴더구조 및 코드 리팩토링
+description: 폴더 구조 및 코드 리팩토링
 title: '[refactor] '
-labels: ''
-assignees: ''
 body:
   - type: markdown
     attributes:
       value: |
         ## 📌 리팩토링 할 내용
 
-        -
+        - 아래 입력 필드에 수정할 내용을 자세히 작성해주세요.
+
+  - type: textarea
+    id: refactor_description
+    attributes:
+      label: 리팩토링 상세 내용
+      description: 어떤 부분을 리팩토링할 예정인지 설명해주세요.
+      placeholder: 예) 컴포넌트 폴더 구조 변경 및 불필요한 props 정리
+    validations:
+      required: false
