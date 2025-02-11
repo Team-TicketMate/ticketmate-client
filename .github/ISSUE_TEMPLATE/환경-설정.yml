@@ -1,19 +1,12 @@
 name: 환경 설정
-description: 개발 환경 설정
+about: 개발 환경 설정
 title: '[chore] '
+labels: ''
+assignees: ''
 body:
   - type: markdown
     attributes:
       value: |
         ## 📌 환경 설정
 
-        - 여기에 환경 설정 관련 설명을 추가하세요.
-
-  - type: textarea
-    id: details
-    attributes:
-      label: 상세 내용
-      description: 변경된 환경 설정에 대한 자세한 설명을 입력하세요.
-      placeholder: 예) `.eslintrc` 설정 변경, `package.json` 스크립트 추가 등
-    validations:
-      required: false
+        -

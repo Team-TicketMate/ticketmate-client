@@ -1,19 +1,12 @@
 name: 기능구현
-description: 기능설명 및 구현
+about: 기능설명 및 구현
 title: '[feat] '
+labels: ''
+assignees: ''
 body:
   - type: markdown
     attributes:
       value: |
         ## 📌 기능 설명
 
-        - 아래 입력 필드에 구현할 기능을 자세히 작성해주세요.
-
-  - type: textarea
-    id: feature_description
-    attributes:
-      label: 기능 상세 설명
-      description: 어떤 기능을 추가할 예정인지 설명해주세요.
-      placeholder: 예) 로그인 시 이메일 인증 추가, 다크 모드 지원
-    validations:
-      required: false
+        -
