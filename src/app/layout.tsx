@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 import localFont from 'next/font/local';
 
 import ResponsiveRootLayout from '@/app/_components/responsive-root-layout/responsive-root-layout';
-import ReactQueryProviders from '@/providers/react-query-provider';
+import Provider from '@/providers';
 
 import type { Metadata } from 'next';
 
@@ -29,9 +29,9 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={notoSansKR.variable}>
-        <ReactQueryProviders>
+        <Provider>
           <ResponsiveRootLayout>{children}</ResponsiveRootLayout>
-        </ReactQueryProviders>
+        </Provider>
       </body>
     </html>
   );
