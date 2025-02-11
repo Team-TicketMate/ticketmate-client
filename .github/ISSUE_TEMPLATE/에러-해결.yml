@@ -1,0 +1,12 @@
+name: 에러 해결
+about: 에러 내용 설명
+title: '[error] '
+labels: ''
+assignees: ''
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 📌 에러 내용 설명
+
+        -
