@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 
 import AppBarSetter from '@/shared/components/header/app-bar/app-bar-setter';
@@ -6,6 +8,25 @@ import UserCard from './components/user-card/user-card';
 import styles from './page.module.scss';
 
 export default function Page() {
+  /*
+  const [ref, inView] = useInView();
+  
+  const handleGetCard ();
+
+  const {data, fetchNextPage, isLoading} = useInfiniteQuery({
+    queryKey: ['cards'],
+    queryFn: ({pageParam = 0}) => handleGetCard(pageParam),
+    initialPageParam: 0,
+    getNextPageParam: (lastPage, allPages) => {
+      return lastPage.length === 10 ? allPages.length*10 : undefined;
+    },
+  });
+
+  useEffect(() => {
+    if (inView) fetchNextPage()
+}, [inView]);
+*/
+
   return (
     <>
       <AppBarSetter title="콘서트 상세 페이지" />
@@ -46,15 +67,6 @@ export default function Page() {
         <hr className={styles.line} />
         <div className={styles.list_container}>
           <span className={styles.subtitle}>대리구매자 목록</span>
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
-          <UserCard />
           <UserCard />
         </div>
       </div>
