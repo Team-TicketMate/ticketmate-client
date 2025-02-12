@@ -4,6 +4,7 @@ export default function UserCard() {
   return (
     <div className={styles.container}>
       <div className={styles.left_container}>
+        {/* 추후 img 태그로 변경 */}
         <div className={styles.profile} />
         <div className={styles.user_container}>
           <span className={styles.nickname}>의문의 티켓터</span>

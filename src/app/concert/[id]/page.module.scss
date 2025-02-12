@@ -11,8 +11,6 @@
     width: 100%;
 
     .title {
-      margin-bottom: 20px;
-  
       @include Heading-02;
       color: var(--gray-5);
       text-align: start;
@@ -24,6 +22,7 @@
       align-items: flex-start;
       width: 100%;
       gap: 8px;
+      margin-top: 20px;
   
       .detail {
         display: flex;
@@ -66,10 +65,7 @@
 
     .subtitle {
       @include Heading-02;
-      color: var(--gray-5); 
-      margin-bottom: 20px;
+      color: var(--gray-5);
+    }
   }
-
-   
-}
 }
