@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import AppBarSetter from '@/shared/components/header/app-bar/app-bar-setter';
 
-import UserCard from './components/user-card/user-card';
+import UserCard from './_components/user-card/user-card';
 import styles from './page.module.scss';
 
 export default function Page() {
