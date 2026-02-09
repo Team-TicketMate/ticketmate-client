@@ -47,8 +47,13 @@ const ChatInput = ({ roomId, chatRoomInfo }: ChatInputProps) => {
   const { mutateAsync: sendChatMessageImage, isPending: isImageUploading } =
     useSendChatMessageImage();
 
+  // 채팅 입력 비활성화 조건 (상대방 퇴장 또는 채팅 비활성화 상태)
+  const isChatDisabled =
+    chatRoomInfo?.chatEnabled === true || chatRoomInfo?.opponentLeft === true;
+
   // 버튼 비활성화 여부
-  const disabled = !isConnected || isConnecting || isImageUploading;
+  const disabled =
+    !isConnected || isConnecting || isImageUploading || isChatDisabled;
 
   // 이미지 파일 선택 및 업로드 처리
   const handleImageSelect = async (files: FileList | null) => {
@@ -235,7 +240,11 @@ const ChatInput = ({ roomId, chatRoomInfo }: ChatInputProps) => {
         <textarea
           className={styles.message_input}
           id="message-input"
-          placeholder="내용을 입력해주세요."
+          placeholder={
+            chatRoomInfo?.opponentLeft
+              ? '상대방이 나간 채팅입니다.'
+              : '내용을 입력해주세요.'
+          }
           value={inputMessage}
           onChange={(e) => setInputMessage(e.target.value)}
           onKeyDown={handleKeyPress}

@@ -68,6 +68,10 @@ export interface GetChatRoomInfoResponse {
   concertType: string;
   /** 신청 양식 ID */
   fulfillmentFormId: string | null;
+  /** 채팅방 활성화 여부 */
+  chatEnabled: boolean;
+  /** 상대방 나간 여부 */
+  opponentLeft: boolean;
 }
 
 export interface SendChatMessageRequest {
@@ -91,6 +95,11 @@ export interface SendChatImageMessageRequest {
 }
 
 export interface PatchCancelProgressRequest {
+  /** 채팅방 고유 ID */
+  chatRoomId: string;
+}
+
+export interface PostChatRoomLeaveRequest {
   /** 채팅방 고유 ID */
   chatRoomId: string;
 }
