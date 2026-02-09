@@ -6,6 +6,7 @@ import {
   GetChatRoomInfoRequest,
   GetChatRoomInfoResponse,
   PatchCancelProgressRequest,
+  PostChatRoomLeaveRequest,
   SendChatImageMessageRequest,
 } from './type';
 
@@ -82,6 +83,22 @@ export const patchCancelProgress = async (
   const data = await httpClient({
     url: `${BASE_URL}/${chatRoomId}/cancel-progress`,
     method: 'patch',
+  });
+
+  return data;
+};
+
+/**
+ * 채팅방 나가기
+ * @param request 채팅방 나가기 요청 파라미터
+ * @returns 채팅방 나가기 응답
+ */
+export const postChatRoomLeave = async (request: PostChatRoomLeaveRequest) => {
+  const { chatRoomId } = request;
+
+  const data = await httpClient({
+    url: `${BASE_URL}/${chatRoomId}/leave`,
+    method: 'post',
   });
 
   return data;
