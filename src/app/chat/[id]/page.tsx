@@ -4,9 +4,12 @@ import React, { use } from 'react';
 
 import ChatHeader from '@/app/chat/[id]/_shared/components/chat-header/chat-header';
 import ChatInput from '@/app/chat/[id]/_shared/components/chat-input/chat-input';
+import LeaveChatModal from '@/app/chat/[id]/_shared/components/modal/leave-chat-modal/leave-chat-modal';
+import { usePostChatRoomLeave } from '@/app/chat/[id]/_shared/services/mutation';
 import { useGetChatRoomInfo } from '@/app/chat/[id]/_shared/services/query';
 import PageFrame from '@/shared/components/layout/page-frame/page-frame';
 import Dropdown from '@/shared/components/ui/dropdown/dropdown';
+import { useModalStore } from '@/shared/components/ui/modal/modal-store';
 
 import ChatMessageList from './_shared/components/chat-message-list/chat-message-list';
 import styles from './page.module.scss';
@@ -16,9 +19,22 @@ interface ChatDetailPageProps {
 }
 
 const ChatDetailPage = ({ params }: ChatDetailPageProps) => {
+  const { open } = useModalStore();
+
   const { id: roomId } = use(params);
 
   const { data: chatRoomInfo } = useGetChatRoomInfo({ chatRoomId: roomId });
+  const postChatRoomLeave = usePostChatRoomLeave();
+
+  const handleLeaveChat = () => {
+    open('leave-chat-modal', LeaveChatModal)
+      .then(() => {
+        postChatRoomLeave.mutate({ chatRoomId: roomId });
+      })
+      .catch(() => {
+        return false;
+      });
+  };
   return (
     <PageFrame
       appBar={{
@@ -34,7 +50,8 @@ const ChatDetailPage = ({ params }: ChatDetailPageProps) => {
             items={[
               {
                 label: '채팅방 나가기',
-                onClick: () => console.log('채팅방 나가기'),
+                onClick: handleLeaveChat,
+                isDanger: true,
               },
             ]}
           />
